@@ -6,7 +6,8 @@
 #define buzzPin 7 // buzzer
 
 float time=0,distance=0;
-int lowLevel = 2;
+int lowLevel = 2;  // distance of lower plane from indicator sensor
+int handLevel = 5; // maximum hand limit from dispenser sensor
  
 
 void setup() {
@@ -14,7 +15,10 @@ void setup() {
 
  pinMode(trigger,OUTPUT);
  pinMode(echo,INPUT);
+ pinMode(levelTrigger,OUTPUT);
+ pinMode(levelEcho,INPUT);
  pinMode(Relay,OUTPUT);
+ pinMode(buzzPin,OUTPUT);
 
  delay(2000);
 }
@@ -41,7 +45,7 @@ void measure_distance()
  
  distance=time*200/20000;
 
- if(distance<5)
+ if(distance<handLevel)
  {
    digitalWrite(Relay,HIGH);
  }

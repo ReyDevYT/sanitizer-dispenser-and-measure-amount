@@ -6,8 +6,8 @@
 #define buzzPin 7 // buzzer
 
 float time=0,distance=0;
-int lowLevel = 2;  // distance of lower plane from indicator sensor
-int handLevel = 5; // maximum hand limit from dispenser sensor
+int lowLevel = 8;  // distance of lower plane from indicator sensor
+int handLevel = 15; // maximum hand limit from dispenser sensor
  
 
 void setup() {
@@ -25,13 +25,13 @@ void setup() {
 
 void loop()
 {
+  long duration, inches, cm;
+  indicate_level();
+
+ if(inches>lowLevel){
  measure_distance();
-
- indicate_level();
-
-
 }
-
+}
 
 void measure_distance()
 {

@@ -89,15 +89,15 @@ void indicate_level()
 
 
 
-    if (inches > lowLevel) {
-        isOK = true;
+    if (inches < lowLevel) {
+        isOK = false;
         digitalWrite(buzzPin, HIGH);
         delay(1000);
         digitalWrite(buzzPin, LOW);
         delay(1000);
     }
     else {
-        isOK = false;
+        isOK = true;
         digitalWrite(buzzPin, LOW);
         
     }

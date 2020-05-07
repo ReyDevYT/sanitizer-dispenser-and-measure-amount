@@ -8,6 +8,7 @@
 float time=0,distance=0;
 int lowLevel = 8;  // distance of lower plane from indicator sensor
 int handLevel = 15; // maximum hand limit from dispenser sensor
+bool isOK;
  
 
 void setup() {
@@ -21,14 +22,16 @@ void setup() {
  pinMode(buzzPin,OUTPUT);
 
  delay(2000);
+ isOK = true;
+ 
 }
-
 void loop()
 {
   long duration, inches, cm;
+
   indicate_level();
 
- if(inches<lowLevel){
+ if(isOK == true){
  measure_distance();
 }
 
@@ -83,13 +86,14 @@ void indicate_level()
 
  
   
-  if(inches>lowLevel){
+  if(inches<lowLevel){
    digitalWrite(buzzPin,HIGH);
    delay(1000);
    digitalWrite(buzzPin,LOW);
    delay(1000);}
    else{
     digitalWrite(buzzPin,LOW);
+    isOK = false;
    }
 
 }

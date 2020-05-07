@@ -22,8 +22,8 @@ Ultrasonic Sensor for CHECKING SANITIZER- Pin :
                                          TRIG : PIN 2
                                          ECHO : PIN 3
 
-Relay Pin  : PIN 6 
-Buzzer Pin : PIN 7
+                                        Relay Pin  : PIN 6 
+                                        Buzzer Pin : PIN 7
 
 All connection Diagram will be provided in file , 
 

@@ -31,9 +31,7 @@ void loop()
  if(inches<lowLevel){
  measure_distance();
 }
-else {
-  digitalWrite(buzzPin,HIGH);
-}
+
 }
 
 void measure_distance()
@@ -85,7 +83,7 @@ void indicate_level()
 
  
   
-  if(inches<=lowLevel){
+  if(inches>lowLevel){
    digitalWrite(buzzPin,HIGH);
    delay(1000);
    digitalWrite(buzzPin,LOW);

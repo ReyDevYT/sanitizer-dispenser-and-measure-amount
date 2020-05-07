@@ -28,8 +28,11 @@ void loop()
   long duration, inches, cm;
   indicate_level();
 
- if(inches>lowLevel){
+ if(inches<lowLevel){
  measure_distance();
+}
+else {
+  digitalWrite(buzzPin,HIGH);
 }
 }
 

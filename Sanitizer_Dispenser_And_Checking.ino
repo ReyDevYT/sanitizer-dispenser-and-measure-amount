@@ -55,6 +55,7 @@ void measure_distance()
     if (distance < handLevel)
     {
         digitalWrite(Relay, HIGH);
+        delay (5000);
     }
     else
     {

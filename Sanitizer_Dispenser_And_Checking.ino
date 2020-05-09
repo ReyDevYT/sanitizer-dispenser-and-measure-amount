@@ -52,7 +52,7 @@ void measure_distance()
 
     distance = time * 200 / 20000;
 
-    if (distance < handLevel)
+    if (distance < handLevel && isOK == true)
     {
         digitalWrite(Relay, HIGH);
         delay (5000);
